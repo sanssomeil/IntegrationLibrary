@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace MPSLib
+namespace IntegrationLibrary
 {
     public class Utils
     {
