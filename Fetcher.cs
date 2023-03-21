@@ -16,25 +16,25 @@ namespace IntegrationLibrary
             Utils.getConfig();
         }
 
-        public JsonDocument loadDataByCpd(DateTime? cpdDate)
+        public JsonDocument loadDataByDate(DateTime? date)
         {
-            var jsonString = this.loadJsonByCpd(cpdDate);
+            var jsonString = this.loadJsonByDate(date);
 
-            if(jsonString.Length == 0)
+            if (jsonString.Length == 0)
             {
                 throw new Exception("Не получены данные json");
             }
             return JsonDocument.Parse(jsonString);
         }
 
-        private string loadJsonByCpd (DateTime? cpdDate)
+        private string loadJsonByDate (DateTime? date)
         {
-            string cpd = DateTime.Parse(cpdDate.ToString ()).ToString ("yyyy-MM-dd");
-            string pathReq = Utils.config["url"] + cpd + "?mask=XXXX";
+            string newDate = DateTime.Parse(date.ToString()).ToString ("yyyy-MM-dd");
+            string pathReq = Utils.config["url"] + newDate + "?mask=XXXX";
             string accept = Utils.config["accept"];
             string apikey = Utils.config["apikey"];
             string downloadPath = Utils.config["path_json_download"];
-            string nameFile = "XXXX-" + cpd + ".json";
+            string nameFile = "XXXX-" + newDate + ".json";
             string response = "";
             WebClient client = new WebClient ();
             bool fileExist = File.Exists(downloadPath + nameFile);
