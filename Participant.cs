@@ -7,7 +7,7 @@ namespace IntegrationLibrary
 {
     public class Participant
     {
-    	public string mainId;
+        public string mainId;
         public string id1;
         public string name;
         public string id2;
