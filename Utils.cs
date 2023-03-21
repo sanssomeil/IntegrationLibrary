@@ -12,7 +12,7 @@ namespace IntegrationLibrary
         public static Dictionary<string, string> config = null;
 
         public static void getConfig()
-		    {
+        {
             XmlDocument doc = new XmlDocument();
             doc.Load(@"C:\ConfigDirectory\file_conf.config");
             var elem = doc.DocumentElement;
@@ -23,14 +23,14 @@ namespace IntegrationLibrary
             }
         }
 
-    		public static void processException(Exception ex)
-    		{
-            string pathLog = @"C:LogsDirectory\log.txt";
+    	public static void processException(Exception ex)
+    	{
+            string pathLog = @"C:\LogsDirectory\log.txt";
             using (StreamWriter logfile = new StreamWriter (pathLog, true, System.Text.Encoding.UTF8))
             {
                 logfile.WriteLine("ERROR | " + DateTime.Now.ToString () + " | " + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             throw ex;
-	    	}
+        }
     }
 }
