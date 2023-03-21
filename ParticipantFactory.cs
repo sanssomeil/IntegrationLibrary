@@ -151,7 +151,7 @@ namespace IntegrationLibrary
                     }
                 }                
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Utils.processException(e);
             }
