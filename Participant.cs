@@ -21,7 +21,7 @@ namespace IntegrationLibrary
         public Dictionary<string, List<string>> yyInfo1 = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> yyInfo2 = new Dictionary<string, List<string>>();
         public Dictionary<string, List<string>> yyInfo3 = new Dictionary<string, List<string>>();
-        
+
         public List<string> getKeysOfyyInfos ()
         {
             return new List<string> (this.yyInfo1.Keys.Concat(yyInfo2.Keys.Concat(yyInfo3.Keys))).Distinct().ToList();
